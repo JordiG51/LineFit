@@ -1,6 +1,5 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy
 from scipy.optimize import curve_fit
 from fitting_functions import *
 
@@ -18,7 +17,6 @@ h = data[1:, 2].astype(np.float32)
 
 params, _ = curve_fit(linear, t, x)
 m, b = params
-
 print("x = {:.3f} t + {:.3f}".format(m, b))
 
 plt.figure()
@@ -33,7 +31,6 @@ plt.close()
 
 params, _ = curve_fit(quadratic, t, h)
 a, bb, c = params
-
 print("h = {:.3f} t^2 + {:.3f} t + {:.3f}".format(a, bb, c))
 
 plt.figure()
@@ -45,4 +42,3 @@ plt.legend(loc="best")
 plt.title("Piano Height vs Time")
 plt.savefig("piano_height_fit.png")
 plt.close()
-
